@@ -11,42 +11,54 @@ const example = {
 }
 
 // Write your intern objects here:
+
+
 class internObject {
-  constructor(emailfirst, first, last) {
-    this.emailfirst = emailfirst;
+  constructor(id, email, first, gender) {
+    this.id = id;
+    this.email = email;
     this.first = first;
-    this.last = last;
-  }
-}
+    this.gender = gender;
+    this.speak = function (){
+      return "Hello my name is " + this.first;
+    };
+    this.multiplyNums = function(param1, param2) {
+      return param1 * param2;
+    };
+  };
+};
+
+
 const internArray = [];
-internArray.push(new internObject('mmelloy0@psu.edu', 'Mitzi', 'F')); 
-internArray.push(new internObject('kdiben1@tinypic.com', 'Kennan', 'M')); 
-internArray.push(new internObject('kmummery2@wikimedia.org', 'Keven', 'M')); 
-internArray.push(new internObject('gmartinson3@illinois.edu', 'Gannie', 'M')); 
-internArray.push(new internObject('adaine5@samsung.com', 'Antonietta', 'F'));
+internArray.push(new internObject(0, 'mmelloy0@psu.edu', 'Mitzi', 'F')); 
+internArray.push(new internObject(1, 'kdiben1@tinypic.com', 'Kennan', 'M')); 
+internArray.push(new internObject(2, 'kmummery2@wikimedia.org', 'Keven', 'M')); 
+internArray.push(new internObject(3, 'gmartinson3@illinois.edu', 'Gannie', 'M')); 
+internArray.push(new internObject(4, 'adaine5@samsung.com', 'Antonietta', 'F'));
 console.log(internArray);
 
 
 // ==== Challenge 2: Reading Object Data ==== 
 // Once your objects are created, log out the following requests from HR into the console:
-
 // Mitzi's name
-
+console.log(internArray[0].first);
 // Kennan's ID
-
+console.log(internArray[3].id);
 // Keven's email
-
+console.log(internArray[2].email);
 // Gannie's name
-
+console.log(internArray[3].first);
 // Antonietta's Gender
+console.log(internArray[4].gender);
 
 // ==== Challenge 3: Object Methods ==== 
 // Give Kennan the ability to say "Hello, my name is Kennan!" Use the console.log provided as a hint.
 // console.log(kennan.speak());
 
+console.log(internArray[1].speak());
 // Antonietta loves math, give her the ability to multiply two numbers together and return the product. Use the console.log provided as a hint.
 //console.log(antonietta.multiplyNums(3,4));
-
+console.log(internArray[4].multiplyNums(2,3));
 // === Great work! === Head over to the the arrays.js. You may come back and attempt the Stretch Challenge once you have completed the challenges in arrays.js and function-conversion.js.
 
 // ==== Stretch Challenge: Nested Objects and the this keyword ==== 
